@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>等一下要吃什麼 🍱</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</head>
+<body>
+  <h1>等一下要吃什麼 🍽️</h1>
+  <p>選擇你想吃的類型：</p>
+  <select id="cuisine">
+    <option value="中式">中式</option>
+    <option value="日式">日式</option>
+    <option value="西式">西式</option>
+    <option value="韓式">韓式</option>
+    <option value="義式">義式</option>
+    <option value="早餐">早餐</option>
+    <option value="火鍋">火鍋</option>
+    <option value="咖啡廳">咖啡廳</option>
+    <option value="不限">不限</option>
+  </select>
+  <button onclick="findRestaurants()">🔍 搜尋附近</button>
+  <button onclick="recommendRandom()">🎲 隨機推薦</button>
+  <div id="results"></div>
+  <div id="map"></div>
+
+  <script src="script.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyXXXXXXX-fake-key-123456&libraries=places&callback=initMap">
+  </script>
+</body>
+</html>
